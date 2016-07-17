@@ -46,9 +46,9 @@ if ( user_response.downcase == 'y'  ||   user_response.downcase == 'Y' )
   loop do
     user_guess = gets.chomp
     while !(is_number?(user_guess)) do
-      puts 'not a valid number, enter again!!!'
-      user_guess = gets.chomp
-    end
+    puts 'not a valid number, enter again!!!'
+    user_guess = gets.chomp
+
 
     user_guess = user_guess.to_i
     # at this point we have valid integer because loop won't let the user pass this point unless he #  enters a valid integer
@@ -63,13 +63,16 @@ if ( user_response.downcase == 'y'  ||   user_response.downcase == 'Y' )
       puts "You are incredible! You have guessed my number of #{comp_pick_num}"
       puts "You guessed #{user_guesses}"
       break
-      # add the lose condition . address if they get it right too before guess 5 
+      # add the lose condition . address if they get it right too before guess 5
     elsif  user_guess < comp_pick_num
       puts "You have guessed too low"
     elsif user_guess > comp_pick_num
       puts "You have guessed too high.  Guess again"
     end
   end
+
+end
+
 
 
 elsif ( user_response.downcase == 'n')
